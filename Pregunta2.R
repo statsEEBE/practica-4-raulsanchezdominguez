@@ -20,4 +20,3 @@ median(simul)
 
 #e
 var(simul)
-
