@@ -10,12 +10,12 @@ lines(x,fx,type="h")
 #probabilidad de 30 llamadas
 dpois(30,25)
 
-#probailidad de recibir como mucho 30 llamadas
+#probailidad de recibir como mucho 30 llamadas (P(X<=30)=F(30))
 ppois(30,25)
 Fx<-ppois(x,25)
 plot(x,Fx,type="s")
 
-#probailidad de recibir como minimo 30 llamadas
+#probailidad de recibir como minimo 30 llamadas (P(X>=30)=F(30))
 1-ppois(29,25)
 
 #primer cuartil
@@ -29,12 +29,14 @@ t<-0.033
 dexp(t,25)
 #deberia de ser 0 P(X=0.033)=0
 
-##probailidad de que pase al menos 0.052 horas entre dos llamadas
+#probailidad de que pase al menos 0.052 horas entre dos llamadas
+#P(T>0.052) = 1-P(T<0.052)= 1-F(0.052)
 1-pexp(0.052,25)
 Fx<- pexp(x,25)
 plot(x,Fx,type="l")
 
 #tercer cuartil
+#qexp(0.025) = F^-1(0.025)
 qexp(0.75,25)
 
 #simular un tiempo de espera entre dos llamadas
